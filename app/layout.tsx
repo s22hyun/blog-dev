@@ -5,6 +5,7 @@ import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
 import Providers from './providers';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const pretendard = localFont({
     src: '../fonts/pretendard/PretendardVariable.woff2',
@@ -62,6 +63,7 @@ export default function RootLayout({
                     </div>
                 </Providers>
                 <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
