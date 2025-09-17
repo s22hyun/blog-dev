@@ -36,6 +36,13 @@ export const metadata: Metadata = {
     other: {
         google: 'notranslate',
     },
+    openGraph: {
+        images: [
+            {
+                url: '/og-image.png',
+            },
+        ],
+    },
 };
 
 export default function RootLayout({
