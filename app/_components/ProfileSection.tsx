@@ -1,24 +1,25 @@
-import { Youtube, Github, BookOpen, Instagram } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { ProfileImage } from '@/components/ProfileImage';
-const socialLinks = [
-    {
-        icon: Youtube,
-        href: 'https://www.youtube.com/gymcoding',
-    },
-    {
-        icon: Github,
-        href: 'https://github.com/gymcoding',
-    },
-    {
-        icon: BookOpen,
-        href: 'https://www.inflearn.com/users/432199/@gymcoding',
-    },
-    {
-        icon: Instagram,
-        href: 'https://www.instagram.com/gymcoding',
-    },
-];
+// import { Youtube, Github, BookOpen, Instagram } from 'lucide-react';
+
+// const socialLinks = [
+//     {
+//         icon: Youtube,
+//         href: 'https://www.youtube.com/gymcoding',
+//     },
+//     {
+//         icon: Github,
+//         href: 'https://github.com/gymcoding',
+//     },
+//     {
+//         icon: BookOpen,
+//         href: 'https://www.inflearn.com/users/432199/@gymcoding',
+//     },
+//     {
+//         icon: Instagram,
+//         href: 'https://www.instagram.com/gymcoding',
+//     },
+// ];
 export default function ProfileSection() {
     return (
         <Card>
