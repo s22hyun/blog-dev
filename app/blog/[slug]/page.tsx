@@ -124,9 +124,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     <div className="space-y-4">
                         <div className="space-y-2">
                             <div className="flex gap-2">
-                                {post.tags?.map((tag) => (
-                                    <Badge key={tag}>{tag}</Badge>
-                                ))}
+                                {post.tags?.map((tag) => <Badge key={tag}>{tag}</Badge>)}
                             </div>
                             <h1 className="text-3xl font-bold md:text-4xl">{post.title}</h1>
                         </div>
@@ -174,7 +172,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     <Separator className="my-16" />
 
                     {/* 이전/다음 포스트 네비게이션 */}
-                    <GiscusComments />
+                    <ments />
                 </section>
                 <aside className="relative hidden md:block">
                     <div className="sticky top-[var(--sticky-top)]">

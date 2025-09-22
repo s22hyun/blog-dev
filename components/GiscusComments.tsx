@@ -5,7 +5,7 @@ export default function GiscusComments() {
     const { theme } = useTheme();
     return (
         <Giscus
-            repo="s22hyun/blog-giscus"
+            repo="s22hyun/blog-dev-giscus"
             repoId="R_kgDOPkM4Jg"
             category="Announcements"
             categoryId="DIC_kwDOOHw4Qc4Cn9v2"
