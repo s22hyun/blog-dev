@@ -172,7 +172,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     <Separator className="my-16" />
 
                     {/* 이전/다음 포스트 네비게이션 */}
-                    <ments />
+                    <GiscusComments />
                 </section>
                 <aside className="relative hidden md:block">
                     <div className="sticky top-[var(--sticky-top)]">
