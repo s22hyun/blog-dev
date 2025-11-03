@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import Header from '@/components/layouts/Header';
-import Footer from '@/components/layouts/Footer';
 import Providers from './providers';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -47,27 +45,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
     children,
-    modal,
 }: Readonly<{
     children: React.ReactNode;
-    modal: React.ReactNode;
 }>) {
     return (
         <html lang="en" className={`${pretendard.variable} scroll-smooth`} suppressHydrationWarning>
             <body className={`${pretendard.className} antialiased font-pretendard`}>
                 <Providers>
-                    <div className="flex min-h-screen flex-col">
-                        {/* Header 영역 */}
-                        <Header />
-                        {/* Main 영역 */}
-                        <main className="flex-1">{children}</main>
-
-                        {/* Modal 영역 */}
-                        {modal}
-
-                        {/* Footer 영역 */}
-                        <Footer />
-                    </div>
+                    <div className="flex min-h-screen flex-col">{children}</div>
                 </Providers>
                 <Analytics />
                 <SpeedInsights />
