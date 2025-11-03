@@ -81,7 +81,7 @@ export default function ExperiencePage() {
 
                 {/* 경험 목록 */}
                 <div className="space-y-6">
-                    {experiences.map((exp, index) => (
+                    {experiences.map((exp) => (
                         <Link key={exp.id} href={`/portfolio/experience/${exp.id}`}>
                             <Card className="hover:shadow-lg hover:border-primary/30 group transition-all duration-200">
                                 <CardHeader>
@@ -123,7 +123,9 @@ export default function ExperiencePage() {
                                             ))}
                                             {exp.achievements.length > 2 && (
                                                 <li className="text-primary flex gap-2 font-medium">
-                                                    <span>+{exp.achievements.length - 2}개 더 보기</span>
+                                                    <span>
+                                                        +{exp.achievements.length - 2}개 더 보기
+                                                    </span>
                                                 </li>
                                             )}
                                         </ul>
