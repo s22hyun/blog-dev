@@ -6,7 +6,7 @@ export default function WithHeaderLayout({
     modal,
 }: Readonly<{
     children: React.ReactNode;
-    modal?: React.ReactNode;
+    modal: React.ReactNode;
 }>) {
     return (
         <>
