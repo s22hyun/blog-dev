@@ -24,26 +24,42 @@ export const metadata: Metadata = {
 
 const portfolioData = {
     profile: {
-        name: '박시현',
-        title: 'Mobile Developer',
+        name: `박시현`,
+        title: '모바일 파트 지원 (전문연구요원 현역 전직 2023.06 - 현재)',
         location: '서울, 대한민국',
         email: 'sii22hp@gmail.com',
         github: 'https://github.com/s22hyun',
-        bio: `현실의 문제를 파고들어 명확하게 정의하는 것을 좋아하고, 0 to 1 케이스를 특히 즐겁게 고민합니다.\n모든 사용자가 실수 없이 사용할 수 있는 시스템을 만드는 과정에서 가장 큰 성취감을 느낍니다.`,
+        bio: `현실의 문제를 파고들어 명확하게 정의하는 것을 좋아하고, 0 to 1 케이스를 특히 즐겁게 고민합니다.
+        Non-GPS 실내 내비게이션 '워치마일'을 기획부터 출시, 운영까지 리드했습니다.
+        개발자와 유저가 모두 실수 없이 사용할 수 있는 시스템을 만드는 과정에서 가장 큰 성취감을 느낍니다.`,
         image: '/images/avatar_porfolio.png',
     },
+    techStacks: [
+        {
+            category: 'Mobile',
+            skills: ['React Native(TypeScript)', 'Android(Kotlin)', 'iOS(Swift)'],
+        },
+        {
+            category: 'State Management',
+            skills: ['React Query', 'Zustand'],
+        },
+        {
+            category: 'Tools',
+            skills: ['Git', 'GitLab', 'Figma', 'Notion'],
+        },
+    ],
     workExperience: [
         {
             company: '베스텔라랩',
             position: 'Developer(선임 연구원), Product Lead',
             period: '2023.06 - 현재',
-            logo: '/images/vestellalab.webp', // 회사 로고 경로
+            logo: '/images/vestellalab.webp',
             roles: [
                 {
                     title: '0→1 앱 개발 리드 및 서비스 총괄',
                     highlights: [
                         `Non-GPS 실내 내비게이션 앱 '워치마일'의 기획, 개발, 운영 등 0 to 1 개발 전 과정을 리드`,
-                        'Non-GPS 측위 문제 해결을 위해 센서 위치 설계, 현장 테스트 도구 개발 등 서비스 구축 전반에 직접 참여했습니다',
+                        'Non-GPS 측위 문제 해결을 위해 센서 위치 설계, 현장 테스트 도구 개발 등 서비스 구축 전반에 직접 참여',
                     ],
                 },
                 {
@@ -78,7 +94,7 @@ const portfolioData = {
                 {
                     title: '공모전 수상 프로젝트의 창업 및 상용화 경험',
                     highlights: [
-                        `공모전 수상작('napPro)을 기반으로 창업에 참여했으며, 이를 실제 서비스인 '왓캠(식물 종류 탐지 및 SNS)'으로 발전시키는 제품화 전 과정을 경험`,
+                        `공모전 수상작(SnapPro)을 기반으로 창업에 참여했으며, 이를 실제 서비스인 '왓캠(식물 종류 탐지 및 SNS)'으로 발전시키는 제품화 전 과정을 경험`,
                     ],
                 },
                 {
@@ -95,7 +111,7 @@ const portfolioData = {
         {
             id: '1',
             company: '워치마일(Non-GPS 내비게이션)',
-            period: '2022.03 - 현재',
+            period: '2023.06 - 현재',
             description:
                 '사내 핵심 비즈니스 모델(BM)인 Non-GPS 주차 내비게이션 앱입니다.  React Native를 기반으로 실시간 빈 주차면 탐색 및  안내 기능을 구현했으며, 측위 알고리즘은 Native Module(Android/iOS)로 개발하여 서비스의 성능과 안정성을 확보했습니다. 초기 기획, UI/UX 설계부터 알고리즘 개발, 사내 기술 교육까지 프로젝트 전반을 주도하며 완수했습니다.',
             role: '모바일 앱 개발, 핵심 알고리즘 개발, 사내 기술 교육',
@@ -112,27 +128,27 @@ const portfolioData = {
         },
         {
             id: '2',
-            company: 'BLE 기반 Non-GPS 측위',
-            period: '2021.01 - 2022.02',
+            company: 'BLE 기반 Non-GPS 측위 기술 연구 및 개발',
+            period: '2023.09 - 현재',
             description:
                 'BLE 기반 Non-GPS 측위 알고리즘을 설계하고, 현장 하드웨어 설치 방법을 정립하고 교육했습니다.',
             role: '알고리즘 설계, 현장 하드웨어 설치 방법 정립 및 교육',
-            techStack: ['React Native', 'JavaScript', 'Context API', 'REST API', 'FCM'],
+            techStack: ['React Native', 'Kotlin', 'Swift', 'BLE'],
             image: '/experience-2.jpg',
         },
         {
             id: '3',
             company: 'Skia 기반 내비게이션 애니메이션 라이브러리',
-            period: '2020.06 - 2020.12',
+            period: '2024.06 - 2024.12',
             description: 'Skia 기반 내비게이션 애니메이션 라이브러리를 개발하고, 배포했습니다.',
             role: 'React Native 라이브러리 개발 및 배포',
-            techStack: ['React Native', 'Expo', 'Firebase', 'Google Maps API'],
+            techStack: ['React Native', 'TypeScript', 'Skia', 'Reanimated'],
             image: '/experience-3.jpg',
         },
         {
             id: '4',
             company: 'AR 내비게이션',
-            period: '2020.06 - 2020.12',
+            period: '2025.09 - 2025.12',
             description:
                 '송도 컨벤시아(컨벤션 센터) 실내 AR 내비게이션 기술 연구 및 Android(Kotlin) 개발을 진행했습니다.',
             role: '기술 연구, Android(Kotlin) 개발',
@@ -140,28 +156,15 @@ const portfolioData = {
             image: '/experience-3.jpg',
         },
     ],
-    techStacks: [
-        {
-            category: 'Mobile',
-            skills: ['React Native(TypeScript)', 'Android(Kotlin)', 'iOS(Swift)'],
-        },
-        {
-            category: 'State Management',
-            skills: ['React Query', 'Zustand'],
-        },
-        {
-            category: 'Tools',
-            skills: ['Git', 'Figma', 'Notion'],
-        },
-    ],
     education: [
         {
             school: '성균관대학교',
             degree: '석사',
             major: '교과교육학과 컴퓨터교육 전공',
-            period: '2019.09 - 2021.08',
+            period: '2019.09 - 2022.02',
             logo: '/images/skku.jpg',
             highlights: [
+                '물체 검출과 GPU 가속을 이용한 드론 자율비행 시스템 연구(학위 논문)',
                 '한국 생산성 본부 알고리즘 코딩 테스트 강의 수업 강사(연대, 성대, 이대)',
                 '드론 기반 Object Detection 연구',
             ],
@@ -188,7 +191,7 @@ const portfolioData = {
             organization: '과학기술정보통신부',
             date: '2018.11',
             description: '컴퓨터 비전을 기반으로 하는 자동 음악 채보 시스템인 CViano 개발',
-            link: 'https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=68399&article.offset=0&articleLimit=10', // 기사 링크
+            link: 'https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=68399&article.offset=0&articleLimit=10',
         },
     ],
 };
@@ -246,6 +249,33 @@ export default function PortfolioPage() {
                                     )}
                                 </div>
                             </div>
+                        </div>
+                    </CardContent>
+                </Card>
+                {/* 기술 스택 섹션 */}
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="flex items-center gap-2">
+                            <span className="text-primary">💻</span>
+                            기술 스택
+                        </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="grid gap-6 md:grid-cols-2">
+                            {techStacks.map((stack) => (
+                                <div key={stack.category} className="space-y-3">
+                                    <h3 className="font-semibold text-sm text-muted-foreground">
+                                        {stack.category}
+                                    </h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {stack.skills.map((skill) => (
+                                            <Badge key={skill} variant="secondary">
+                                                {skill}
+                                            </Badge>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </CardContent>
                 </Card>
@@ -420,34 +450,6 @@ export default function PortfolioPage() {
                         ))}
                     </div>
                 </div>
-
-                {/* 기술 스택 섹션 */}
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="flex items-center gap-2">
-                            <span className="text-primary">💻</span>
-                            기술 스택
-                        </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="grid gap-6 md:grid-cols-2">
-                            {techStacks.map((stack) => (
-                                <div key={stack.category} className="space-y-3">
-                                    <h3 className="font-semibold text-sm text-muted-foreground">
-                                        {stack.category}
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {stack.skills.map((skill) => (
-                                            <Badge key={skill} variant="secondary">
-                                                {skill}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </CardContent>
-                </Card>
 
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* 학력 섹션 */}
