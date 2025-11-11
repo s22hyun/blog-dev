@@ -226,3 +226,135 @@
     @apply mx-auto max-w-6xl px-4;
     width: 100%;
 }
+
+/* PDF 출력 최적화 스타일 */
+@media print {
+    /* 페이지 설정 */
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+
+    /* 전역 설정 */
+    body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    /* 요소가 페이지 경계에서 끊기지 않도록 */
+    /* Card 컴포넌트 */
+    [class*="card"],
+    [class*="Card"] {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        box-shadow: none !important;
+    }
+
+    /* 경력 섹션 이후 페이지 나누기 */
+    .print-page-break-after {
+        break-after: page !important;
+        page-break-after: always !important;
+    }
+
+    /* 프로젝트 및 경험 섹션은 새 페이지에서 시작하되, 제목과 첫 카드를 함께 유지 */
+    .print-allow-break {
+        break-before: page !important;
+        page-break-before: always !important;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    /* CardHeader는 반드시 다음 내용과 함께 */
+    .print-allow-break > *:nth-child(1),
+    .print-allow-break > *:nth-child(2) {
+        break-after: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    /* 하지만 그 안의 각 프로젝트 Card와 경력 항목은 잘리지 않도록 */
+    .print-allow-break [class*="card"],
+    .print-allow-break [class*="Card"],
+    .print-allow-break .space-y-6 > div,
+    .print-allow-break .space-y-3 > a {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    /* 경력, 프로젝트, 학력, 수상 각 항목 */
+    [class*="space-y"] > div,
+    [class*="grid"] > div,
+    [class*="flex"] > div {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* 리스트 아이템들 */
+    li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* 프로필, 경력 섹션 등 메인 컨테이너 */
+    .space-y-8 > * {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* 불필요한 요소 숨기기 */
+    /* 뒤로가기/네비게이션 버튼 영역 전체 숨기기 */
+    .flex.items-center.gap-4:has(a[href*="portfolio"] svg) {
+        display: none;
+    }
+
+    /* "전체보기" 링크만 숨기기 */
+    a[href="/portfolio/experience"]:has(svg) {
+        display: none !important;
+    }
+
+    /* 하단 네비게이션 카드 숨기기 */
+    .border-dashed {
+        display: none;
+    }
+
+    /* 버튼 숨기기 */
+    button {
+        display: none;
+    }
+
+    /* 프로젝트 카드 내부의 화살표 아이콘만 숨기기 */
+    a[href*="/experience/"] svg {
+        display: none !important;
+    }
+
+    /* 링크는 보이지만 클릭 불가능하게 */
+    a[href*="/experience/"] {
+        pointer-events: none;
+        cursor: default;
+    }
+
+    /* 링크 밑줄 제거 */
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* 이미지 품질 유지 */
+    img {
+        max-width: 100%;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* 여백 최적화 */
+    .container {
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* 색상 유지 (배지, 아이콘 등) */
+    * {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+}
