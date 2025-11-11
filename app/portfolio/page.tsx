@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     Mail,
     MapPin,
-    Github,
     Trophy,
     GraduationCap,
     Briefcase,
