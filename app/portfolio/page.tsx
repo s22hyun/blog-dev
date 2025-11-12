@@ -110,41 +110,41 @@ const portfolioData = {
             id: '1',
             company: '워치마일(Non-GPS 내비게이션)',
             period: '2023.06 - 현재',
-            description: `베스텔라랩의 메인 비즈니스 모델인 Non-GPS 주차 내비게이션 앱입니다.
-            React Native를 통해 최단 경로 탐색 알고리즘, 지도 렌더링 라이브러리, 내비게이션에 필요한 모든 애니메이션, BLE를 통한 측위 모듈 등 직접 앱과 비즈니스 로직을 고민하고 구현하였습니다.
-            초기 기획, UI/UX 설계, 알고리즘 개발, 사내 기술 교육, 운영까지 프로젝트 전반을 주도하여 완수했습니다.`,
+            description: `• 베스텔라랩의 메인 비즈니스 모델인 Non-GPS 구역에서도 빈 주차면까지 안내하는 실내 내비게이션 앱
+            • React Native를 통해 빈 주차면까지 최단 거리 탐색, 지도 렌더링, 제스쳐, 내비게이션에 필요한 애니메이션을 구현
+            • BLE를 통한 실내 측위를 Native Module(Kotlin, Swift)로 구현하여 성능을 최적화
+            • 어떤 주차장 구조에서도 데이터 교체로 바로 내비게이션 서비스를 도입할 수 있는 통합 알고리즘 구현
+            • 알고리즘 개발, 사내 기술 교육, 운영까지 프로젝트 전반을 주도하여 완수`,
             role: '모바일 앱 개발, 핵심 알고리즘 개발, 사내 기술 교육',
             techStack: [
                 'React Native',
-                'TypeScript',
                 'Android(Kotlin)',
                 'iOS(Swift)',
                 'Skia',
                 'Reanimated',
                 'React Query',
             ],
-            image: '/experience-1.jpg',
         },
         {
             id: '2',
             company: 'BLE 기반 Non-GPS 측위 기술 연구 및 개발',
             period: '2023.09 - 현재',
-            description: `실내 내비게이션(워치마일), 실내 자율 주행(제로 크루징) 등 사내 프로젝트에 사용되는 핵심 기술인 BLE 기반 Non-GPS 측위 기술의 구현 및 개선에 직접 참여했습니다.
-                좋은 앱은 코드 밖에서도 나온다는 생각에 측위 센서 설치 현장에서 문제를 접하고 이를 직접 해결했으며, 센서 설치 방법을 정립하고 사내 기술 교육을 진행했습니다.
-                테스트 도구를 만들어 변수가 있는 현장에서 발생하는 문제들에 대해 선재적으로 대응할 수 있는 시스템을 구축했습니다.`,
+            description: `• 실내 내비게이션(워치마일), 실내 자율 주행(제로 크루징) 등 사내 프로젝트에 사용되는 핵심 기술
+                • 측위 기술이 실제 사용되는 현장에서 몸으로 부딪히며 측위 센서 설치 방법을 정립하고 사내 기술 교육을 진행
+                • 측위 센서 테스트를 위해 비개발 인원도 사용할 수 있는 테스트 도구를 구현
+                • 자동화 및 개념 정립으로 인해 사내 측위 센서 설치 및 기획 인원이 개발자에서 비개발, 비전문 인력으로 이동
+                `,
             role: '알고리즘 설계, 현장 하드웨어 설치 방법 정립 및 교육',
             techStack: ['React Native', 'Kotlin', 'Swift', 'BLE'],
-            image: '/experience-2.jpg',
         },
         {
             id: '3',
             company: 'AR 내비게이션',
             period: '2025.09 - 2025.11',
-            description: `송도 컨벤시아(컨벤션 센터) 실내 AR 내비게이션 기술 연구 및 Android(Kotlin) 개발을 진행했습니다.
-                일반적으로 AR 내비게이션 구현에 사용되는 SLAM을 사용할 수 없는 상황에서 최대한 AR 내비게이션 경험을 사용자에게 제공할 수 있도록 기존 실내 내비게이션 노하우를 적용하여 아이디어를 제안하고 이를 직접 구현했습니다.`,
+            description: `• 송도 컨벤시아(컨벤션 센터) 실내 AR 내비게이션 기술 연구 및 Android(Kotlin) 개발
+                • 일반적으로 AR 내비게이션 구현에 사용되는 SLAM을 사용할 수 없는 상황에서 AR 내비게이션을 위한 아이디어 제시 및 구현`,
             role: '기술 연구, Android(Kotlin) 개발',
-            techStack: ['Android(Kotlin)', 'ARCore'],
-            image: '/experience-3.jpg',
+            techStack: ['Android(Kotlin)', 'ARCore', 'MVVM', 'Compose UI'],
         },
     ],
     education: [
@@ -174,14 +174,17 @@ const portfolioData = {
             title: '농식품 공공데이터 활용 창업 경진대회 우수상',
             organization: '농림축산식품부',
             date: '2020.08',
-            description: '식물 종류 탐지 및 SNS 서비스 창업 프로젝트',
+            description: `• 식물 종류 탐지 및 SNS 서비스 창업 프로젝트
+            • image classification 모델을 tensorflow lite를 통해 device에서 추론하는 앱`,
             link: 'https://www.fsnews.co.kr/news/articleView.html?idxno=39240',
         },
         {
             title: '제 30회 글로벌 SW 공모 대전 최우수상(국무총리상)',
             organization: '과학기술정보통신부',
             date: '2018.11',
-            description: '컴퓨터 비전을 기반으로 하는 자동 음악 채보 시스템인 CViano 개발',
+            description: `• 컴퓨터 비전을 기반으로 하는 자동 음악 채보 시스템인 CViano 개발
+            • SVM 알고리즘을 사용하여 건반을 구분하여 채보 알고리즘을 구현
+            `,
             link: 'https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=68399&article.offset=0&articleLimit=10',
         },
     ],
@@ -360,90 +363,86 @@ export default function PortfolioPage() {
                 </Card>
 
                 {/* 프로젝트 및 경험 섹션 */}
-                <Card className="print-allow-break">
-                    <CardHeader>
-                        <div className="flex items-center justify-between print-allow-break">
-                            <CardTitle className="flex items-center gap-2">
-                                <Briefcase className="text-primary h-5 w-5" />
-                                프로젝트 및 경험
-                            </CardTitle>
-                            <Link
-                                href="/portfolio/experience"
-                                className="hover:text-primary flex items-center gap-1 text-sm font-medium transition-colors"
-                            >
-                                전체보기
-                                <ArrowRight className="h-4 w-4" />
-                            </Link>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="space-y-3">
-                            {experiences.map((exp) => (
-                                <Link key={exp.id} href={`/portfolio/experience/${exp.id}`}>
-                                    <Card className="hover:shadow-lg hover:border-primary/30 group transition-all duration-200">
-                                        <CardContent>
-                                            <div className="space-y-4">
-                                                {/* 헤더 - 프로젝트명과 기간 */}
-                                                <div className="flex items-start justify-between gap-4">
-                                                    <div className="flex-1">
-                                                        <h3 className="group-hover:text-primary text-lg font-semibold transition-colors">
-                                                            {exp.company}
-                                                        </h3>
-                                                        {exp.period && (
-                                                            <div className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
-                                                                <Calendar className="h-3.5 w-3.5" />
-                                                                <span>{exp.period}</span>
-                                                            </div>
-                                                        )}
-                                                    </div>
-                                                    <ArrowRight className="text-muted-foreground group-hover:text-primary h-5 w-5 shrink-0 transition-colors" />
+                <div className="space-y-4 print-allow-break">
+                    <div className="flex items-center justify-between print-allow-break">
+                        <h3 className="flex items-center gap-2 text-xl font-bold">
+                            <Briefcase className="text-primary h-5 w-5" />
+                            프로젝트 및 경험
+                        </h3>
+                        <Link
+                            href="/portfolio/experience"
+                            className="hover:text-primary flex items-center gap-1 text-sm font-medium transition-colors"
+                        >
+                            전체보기
+                            <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    </div>
+                    <div className="space-y-3 gap-2 grid">
+                        {experiences.map((exp) => (
+                            <Link key={exp.id} href={`/portfolio/experience/${exp.id}`}>
+                                <Card className="hover:shadow-lg hover:border-primary/30 group transition-all duration-200">
+                                    <CardContent>
+                                        <div className="space-y-4">
+                                            {/* 헤더 - 프로젝트명과 기간 */}
+                                            <div className="flex items-start justify-between gap-4">
+                                                <div className="flex-1">
+                                                    <h3 className="group-hover:text-primary text-lg font-semibold transition-colors">
+                                                        {exp.company}
+                                                    </h3>
+                                                    {exp.period && (
+                                                        <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
+                                                            <Calendar className="h-3.5 w-3.5" />
+                                                            <span>{exp.period}</span>
+                                                        </div>
+                                                    )}
                                                 </div>
+                                                <ArrowRight className="text-muted-foreground group-hover:text-primary h-5 w-5 shrink-0 transition-colors" />
+                                            </div>
 
-                                                {/* 역할 */}
-                                                <div className="bg-muted/50 rounded-lg px-3 py-2">
-                                                    <p className="text-xs font-semibold text-muted-foreground mb-1">
-                                                        담당 역할
-                                                    </p>
-                                                    <p className="text-sm font-medium text-foreground">
-                                                        {exp.role}
-                                                    </p>
-                                                </div>
+                                            {/* 역할 */}
+                                            <div className="bg-muted/50 rounded-lg px-3 py-2">
+                                                <p className="text-xs font-semibold text-muted-foreground mb-1">
+                                                    담당 역할
+                                                </p>
+                                                <p className="text-sm font-medium text-foreground">
+                                                    {exp.role}
+                                                </p>
+                                            </div>
 
-                                                {/* 설명 */}
-                                                <div className="space-y-2">
-                                                    <p className="text-xs font-semibold text-muted-foreground">
-                                                        프로젝트 소개
-                                                    </p>
-                                                    <p className="text-foreground/80 text-sm leading-relaxed whitespace-pre-line">
-                                                        {exp.description}
-                                                    </p>
-                                                </div>
+                                            {/* 설명 */}
+                                            <div className="space-y-2">
+                                                <p className="text-xs font-semibold text-muted-foreground">
+                                                    프로젝트 소개
+                                                </p>
+                                                <p className="text-foreground/80 text-sm leading-relaxed whitespace-pre-line">
+                                                    {exp.description}
+                                                </p>
+                                            </div>
 
-                                                {/* 기술 스택 */}
-                                                <div className="space-y-2">
-                                                    <p className="text-xs font-semibold text-muted-foreground">
-                                                        사용 기술
-                                                    </p>
-                                                    <div className="flex flex-wrap gap-1.5">
-                                                        {exp.techStack.map((tech) => (
-                                                            <Badge
-                                                                key={tech}
-                                                                variant="secondary"
-                                                                className="text-xs"
-                                                            >
-                                                                {tech}
-                                                            </Badge>
-                                                        ))}
-                                                    </div>
+                                            {/* 기술 스택 */}
+                                            <div className="space-y-2">
+                                                <p className="text-xs font-semibold text-muted-foreground">
+                                                    사용 기술
+                                                </p>
+                                                <div className="flex flex-wrap gap-1.5">
+                                                    {exp.techStack.map((tech) => (
+                                                        <Badge
+                                                            key={tech}
+                                                            variant="secondary"
+                                                            className="text-xs"
+                                                        >
+                                                            {tech}
+                                                        </Badge>
+                                                    ))}
                                                 </div>
                                             </div>
-                                        </CardContent>
-                                    </Card>
-                                </Link>
-                            ))}
-                        </div>
-                    </CardContent>
-                </Card>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
 
                 <div className="grid gap-8 md:grid-cols-2">
                     {/* 학력 섹션 */}
@@ -542,7 +541,7 @@ export default function PortfolioPage() {
                                             {award.date}
                                         </p>
                                         {award.description && (
-                                            <p className="text-foreground/80 text-sm">
+                                            <p className="text-foreground/80 text-sm whitespace-pre-line">
                                                 {award.description}
                                             </p>
                                         )}
