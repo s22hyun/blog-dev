@@ -4,6 +4,7 @@ export interface Profile {
     title: string;
     location: string;
     email: string;
+    phone: string;
     github: string;
     bio: string;
     image: string;
@@ -82,6 +83,7 @@ export const portfolioData: PortfolioData = {
         title: '모바일 파트 지원 (전문연구요원 현역 전직 2023.06 - 현재)',
         location: '서울, 대한민국',
         email: 'sii22hp@gmail.com',
+        phone: '010-2613-7182',
         github: 'https://github.com/s22hyun',
         bio: `현실의 문제를 파고들어 명확하게 정의하는 것을 좋아하고, 0 to 1 케이스를 특히 즐겁게 고민합니다.
         Non-GPS 실내 내비게이션 '워치마일'을 기획부터 출시, 운영까지 리드했습니다.

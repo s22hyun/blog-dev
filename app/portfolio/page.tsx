@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     Mail,
+    Phone,
     MapPin,
     Trophy,
     GraduationCap,
@@ -60,6 +61,15 @@ export default function PortfolioPage() {
                                             className="hover:text-primary transition-colors"
                                         >
                                             {profile.email}
+                                        </a>
+                                    </div>
+                                    <div className="flex items-center gap-2 text-sm">
+                                        <Phone className="h-4 w-4" />
+                                        <a
+                                            href={`tel:${profile.phone}`}
+                                            className="hover:text-primary transition-colors"
+                                        >
+                                            {profile.phone}
                                         </a>
                                     </div>
                                     {/* {profile.github && (
