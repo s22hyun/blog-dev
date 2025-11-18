@@ -15,179 +15,11 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { portfolioData } from '@/lib/portfolio-data';
 
 export const metadata: Metadata = {
     title: 'Park Sihyun Portfolio',
     description: 'Park Sihyun Portfolio',
-};
-
-const portfolioData = {
-    profile: {
-        name: `박시현`,
-        title: '모바일 파트 지원 (전문연구요원 현역 전직 2023.06 - 현재)',
-        location: '서울, 대한민국',
-        email: 'sii22hp@gmail.com',
-        github: 'https://github.com/s22hyun',
-        bio: `현실의 문제를 파고들어 명확하게 정의하는 것을 좋아하고, 0 to 1 케이스를 특히 즐겁게 고민합니다.
-        Non-GPS 실내 내비게이션 '워치마일'을 기획부터 출시, 운영까지 리드했습니다.
-        개발자와 유저가 모두 실수 없이 사용할 수 있는 시스템을 만드는 과정에서 가장 큰 성취감을 느낍니다.`,
-        image: '/images/avatar_porfolio.png',
-    },
-    techStacks: [
-        {
-            category: 'Mobile',
-            skills: ['React Native(TypeScript)', 'Android(Kotlin)', 'iOS(Swift)'],
-        },
-        {
-            category: 'State Management',
-            skills: ['React Query', 'Zustand'],
-        },
-        {
-            category: 'Tools',
-            skills: ['Git', 'GitLab', 'Figma', 'Notion'],
-        },
-    ],
-    workExperience: [
-        {
-            company: '베스텔라랩',
-            position: 'Developer(선임 연구원), Product Lead',
-            period: '2023.06 - 현재',
-            logo: '/images/vestellalab.webp',
-            roles: [
-                {
-                    title: '0→1 앱 개발 리드 및 서비스 총괄',
-                    highlights: [
-                        `Non-GPS 실내 내비게이션 앱 '워치마일'의 기획, 개발, 운영 등 0 to 1 개발 전 과정을 리드`,
-                        '측위 센서 설치 위치 및 방법 설계, 테스트 도구 개발 등 서비스 구축 전반에 직접 참여',
-                    ],
-                },
-                {
-                    title: 'Native module로 핵심 기능 구현',
-                    highlights: [
-                        '측위 등 성능이 중요한 핵심 로직을 Kotlin, Swift 네이티브 모듈로 개발하여 RN의 성능 한계를 해결',
-                        'BLE를 통한 실내 측위를 Android/iOS Native SDK로 만들어 외부 파트너사에 제공하고 기술 제휴를 논의',
-                    ],
-                },
-                {
-                    title: '지도 렌더링과 애니메이션을 직접 구현하여 최적의 UX 제공',
-                    highlights: [
-                        'React Native Skia, Reanimated를 사용하여 지도 및 경로 안내 애니메이션을 직접 구현하여 부드러운 UX를 제공',
-                        'UI 로직을 재사용 가능한 공통 컴포넌트로 설계하여 개발 효율성과 유지보수성을 확보',
-                    ],
-                },
-                {
-                    title: '팀 리딩 및 기술 공유 문화 조성',
-                    highlights: [
-                        '신규 팀원을 위한 온보딩 프로그램을 직접 설계하고 도입했으며, 코드 리뷰와 멘토링을 통해 팀의 기술 역량 강화',
-                        '개발, 비개발 직군을 대상으로 기술 교육을 진행하여 전사적인 제품 이해도를 높이고 협업 효율을 개선',
-                    ],
-                },
-            ],
-        },
-        {
-            company: 'AIPro',
-            position: 'App Developer',
-            period: '2020.05 - 2020.09',
-            logo: '/images/AIPro.png',
-            roles: [
-                {
-                    title: '공모전 수상 프로젝트의 창업 및 상용화 경험',
-                    highlights: [
-                        `공모전 수상작(SnapPro)을 기반으로 창업에 참여했으며, 이를 실제 서비스인 '왓캠(식물 종류 탐지 및 SNS)'으로 발전시키는 제품화 과정을 경험`,
-                    ],
-                },
-                {
-                    title: '모바일 환경에서의 AI 모델 탑재 및 네이티브 모듈 구현',
-                    highlights: [
-                        'React Native를 기반으로 앱을 개발했으며, 당시 자료가 부족했던 모바일 환경에서 AI 모델을 직접 네이티브 모듈로 구현하여 식물 탐지 및 추론 기능을 탑재',
-                    ],
-                },
-            ],
-        },
-    ],
-    experiences: [
-        {
-            id: '1',
-            company: '워치마일(Non-GPS 내비게이션)',
-            period: '2023.06 - 현재',
-            description: `• 베스텔라랩의 메인 비즈니스 모델인 Non-GPS 구역에서도 빈 주차면까지 안내하는 실내 내비게이션 앱
-            • React Native를 통해 빈 주차면까지 최단 거리 탐색, 지도 렌더링, 제스쳐, 내비게이션에 필요한 애니메이션을 구현
-            • BLE를 통한 실내 측위를 Native Module(Kotlin, Swift)로 구현하여 성능을 최적화
-            • 어떤 주차장 구조에서도 데이터 교체로 바로 내비게이션 서비스를 도입할 수 있는 통합 알고리즘 구현
-            • 알고리즘 개발, 사내 기술 교육, 운영까지 프로젝트 전반을 주도하여 완수`,
-            role: '모바일 앱 개발, 핵심 알고리즘 개발, 사내 기술 교육',
-            techStack: [
-                'React Native',
-                'Android(Kotlin)',
-                'iOS(Swift)',
-                'Skia',
-                'Reanimated',
-                'React Query',
-            ],
-        },
-        {
-            id: '2',
-            company: 'BLE 기반 Non-GPS 측위 기술 연구 및 개발',
-            period: '2023.09 - 현재',
-            description: `• 실내 내비게이션(워치마일), 실내 자율 주행(제로 크루징) 등 사내 프로젝트에 사용되는 핵심 기술
-                • 측위 기술이 실제 사용되는 현장에서 몸으로 부딪히며 측위 센서 설치 방법을 정립하고 사내 기술 교육을 진행
-                • 측위 센서 테스트를 위해 비개발 인원도 사용할 수 있는 테스트 도구를 구현
-                • 자동화 및 개념 정립으로 인해 사내 측위 센서 설치 및 기획 인원이 개발자에서 비개발, 비전문 인력으로 이동
-                `,
-            role: '알고리즘 설계, 현장 하드웨어 설치 방법 정립 및 교육',
-            techStack: ['React Native', 'Kotlin', 'Swift', 'BLE'],
-        },
-        {
-            id: '3',
-            company: 'AR 내비게이션',
-            period: '2025.09 - 2025.11',
-            description: `• 송도 컨벤시아(컨벤션 센터) 실내 AR 내비게이션 기술 연구 및 Android(Kotlin) 개발
-                • 일반적으로 AR 내비게이션 구현에 사용되는 SLAM을 사용할 수 없는 상황에서 AR 내비게이션을 위한 아이디어 제시 및 구현`,
-            role: '기술 연구, Android(Kotlin) 개발',
-            techStack: ['Android(Kotlin)', 'ARCore', 'MVVM', 'Compose UI'],
-        },
-    ],
-    education: [
-        {
-            school: '성균관대학교',
-            degree: '석사',
-            major: '교과교육학과 컴퓨터교육 전공',
-            period: '2019.09 - 2022.02',
-            logo: '/images/skku.jpg',
-            highlights: [
-                '물체 검출과 GPU 가속을 이용한 드론 자율비행 시스템 연구(학위 논문)',
-                '한국 생산성 본부 알고리즘 코딩 테스트 강의 수업 강사(연대, 성대, 이대)',
-                '드론 기반 Object Detection 연구',
-            ],
-        },
-        {
-            school: '성균관대학교',
-            degree: '학사',
-            major: '컴퓨터교육과',
-            period: '2015.03 - 2019.08',
-            logo: '/images/skku.jpg',
-            highlights: ['성균관대학교 신입생 대상 필수 교양 코딩 강의 실습 수업 강사'],
-        },
-    ],
-    awards: [
-        {
-            title: '농식품 공공데이터 활용 창업 경진대회 우수상',
-            organization: '농림축산식품부',
-            date: '2020.08',
-            description: `• 식물 종류 탐지 및 SNS 서비스 창업 프로젝트
-            • image classification 모델을 tensorflow lite를 통해 device에서 추론하는 앱`,
-            link: 'https://www.fsnews.co.kr/news/articleView.html?idxno=39240',
-        },
-        {
-            title: '제 30회 글로벌 SW 공모 대전 최우수상(국무총리상)',
-            organization: '과학기술정보통신부',
-            date: '2018.11',
-            description: `• 컴퓨터 비전을 기반으로 하는 자동 음악 채보 시스템인 CViano 개발
-            • SVM 알고리즘을 사용하여 건반을 구분하여 채보 알고리즘을 구현
-            `,
-            link: 'https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=68399&article.offset=0&articleLimit=10',
-        },
-    ],
 };
 
 export default function PortfolioPage() {
@@ -369,13 +201,13 @@ export default function PortfolioPage() {
                             <Briefcase className="text-primary h-5 w-5" />
                             프로젝트 및 경험
                         </h3>
-                        <Link
+                        {/* <Link
                             href="/portfolio/experience"
                             className="hover:text-primary flex items-center gap-1 text-sm font-medium transition-colors"
                         >
                             전체보기
                             <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        </Link> */}
                     </div>
                     <div className="space-y-3 gap-2 grid">
                         {experiences.map((exp) => (
@@ -387,7 +219,7 @@ export default function PortfolioPage() {
                                             <div className="flex items-start justify-between gap-4">
                                                 <div className="flex-1">
                                                     <h3 className="group-hover:text-primary text-lg font-semibold transition-colors">
-                                                        {exp.company}
+                                                        {exp.title}
                                                     </h3>
                                                     {exp.period && (
                                                         <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
