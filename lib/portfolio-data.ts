@@ -80,7 +80,7 @@ export interface PortfolioData {
 export const portfolioData: PortfolioData = {
     profile: {
         name: `박시현`,
-        title: 'Android Developer (전문연구요원 현역 전직 2023.06 - 현재)',
+        title: '모바일 파트 지원 (전문연구요원 현역 전직 2023.06 - 현재)',
         location: '서울, 대한민국',
         email: 'sii22hp@gmail.com',
         phone: '010-2613-7182',
