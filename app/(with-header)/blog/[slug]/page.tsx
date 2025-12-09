@@ -15,6 +15,8 @@ import withTocExport from '@stefanprobst/rehype-extract-toc/mdx';
 import { notFound } from 'next/navigation';
 import { getPublishedPosts } from '@/lib/notion';
 import { Metadata } from 'next';
+import rehypeImageMetadata from '@/lib/rehype-image-metadata';
+import { MdxImage } from '@/components/mdx-image';
 
 // 동적 메타데이터 생성
 export async function generateMetadata({
@@ -107,6 +109,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
         rehypePlugins: [
             withSlugs,
             rehypeSanitize,
+            rehypeImageMetadata, // 이미지 메타데이터 플러그인 추가
             withToc,
             withTocExport,
             /** Optionally, provide a custom name for the export. */
@@ -159,10 +162,19 @@ export default async function BlogPost({ params }: BlogPostProps) {
                     <div className="prose prose-neutral dark:prose-invert prose-headings:scroll-mt-[var(--header-height)] max-w-none">
                         <MDXRemote
                             source={markdown}
+                            components={{
+                                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                                img: MdxImage as any, // 타입 호환성 위해 any 캐스팅 (MDXComponents 타입 이슈 방지)
+                            }}
                             options={{
                                 mdxOptions: {
                                     remarkPlugins: [remarkGfm],
-                                    rehypePlugins: [withSlugs, rehypeSanitize, rehypePrettyCode],
+                                    rehypePlugins: [
+                                        withSlugs,
+                                        rehypeSanitize,
+                                        rehypeImageMetadata, // 여기서도 플러그인 추가 (MDXRemote 내부에서 컴파일 시 필요할 수 있음)
+                                        rehypePrettyCode,
+                                    ],
                                 },
                             }}
                         />

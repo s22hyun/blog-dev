@@ -128,13 +128,13 @@ export const getPublishedPosts = unstable_cache(
           },
           ...(tag && tag !== '전체'
             ? [
-                {
-                  property: 'Tags',
-                  multi_select: {
-                    contains: tag,
-                  },
+              {
+                property: 'Tags',
+                multi_select: {
+                  contains: tag,
                 },
-              ]
+              },
+            ]
             : []),
         ],
       },
@@ -158,8 +158,9 @@ export const getPublishedPosts = unstable_cache(
       nextCursor: response.next_cursor,
     };
   },
-  undefined,
+  ['posts'],
   {
+    revalidate: 3600,
     tags: ['posts'],
   }
 );
