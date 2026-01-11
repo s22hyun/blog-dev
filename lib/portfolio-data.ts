@@ -232,11 +232,12 @@ export const portfolioData: PortfolioData = {
         },
         {
             id: '2',
-            title: 'AR & 보행자 내비게이션',
+            title: 'AR & 보행자 내비게이션(AI 개발 도구 활용)',
             company: '베스텔라랩',
             period: '2025.09 - 2025.11',
             description: `• 실내 AR 내비게이션 기술 연구 및 Android(Kotlin) 개발
-                • 일반적으로 AR 내비게이션 구현에 사용되는 SLAM을 사용할 수 없는 상황에서 AR 내비게이션을 위한 아이디어 제시 및 구현
+                • AI를 활영하여 iOS 앱으로 마이그레이션
+                • 실내 AR 내비게이션 구현에 사용되는 SLAM을 사용할 수 없는 상황에서 AR 내비게이션을 위한 아이디어 제시 및 구현
                 • 워치마일 서비스의 주차장 차량 내비게이션 로직을 재사용하여 효율성 및 확장성 확보`,
             role: 'AR 내비게이션 기술 연구, Android(Kotlin) 개발, 해외 기술 소통 및 미팅(사우디, 카타르)',
             techStack: ['Android(Kotlin)', 'ARCore', 'MVVM', 'Compose UI'],

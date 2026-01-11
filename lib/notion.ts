@@ -126,6 +126,12 @@ export const getPublishedPosts = unstable_cache(
               equals: 'Published',
             },
           },
+          {
+            property: 'Tags',
+            multi_select: {
+              does_not_contain: 'TIL',
+            },
+          },
           ...(tag && tag !== '전체'
             ? [
               {
@@ -179,12 +185,14 @@ export const getTags = async (): Promise<TagFilterItem[]> => {
     {} as Record<string, number>
   );
 
-  // TagFilterItem 형식으로 변환
-  const tags: TagFilterItem[] = Object.entries(tagCount).map(([name, count]) => ({
-    id: name,
-    name,
-    count,
-  }));
+  // TagFilterItem 형식으로 변환 (TIL 태그 제외)
+  const tags: TagFilterItem[] = Object.entries(tagCount)
+    .filter(([name]) => name !== 'TIL')
+    .map(([name, count]) => ({
+      id: name,
+      name,
+      count,
+    }));
 
   // "전체" 태그 추가
   tags.unshift({
@@ -248,3 +256,45 @@ export const createPost = async ({ title, tag, content }: CreatePostParams) => {
 
   return response;
 };
+
+export const getTilPosts = unstable_cache(
+  async (): Promise<Post[]> => {
+    const response = await notion.databases.query({
+      database_id: process.env.NOTION_DATABASE_ID!,
+      filter: {
+        and: [
+          {
+            property: 'Status',
+            select: {
+              equals: 'Published',
+            },
+          },
+          {
+            property: 'Tags',
+            multi_select: {
+              contains: 'TIL',
+            },
+          },
+        ],
+      },
+      sorts: [
+        {
+          property: 'Date',
+          direction: 'descending',
+        },
+      ],
+      page_size: 10,
+    });
+
+    const posts = response.results
+      .filter((page): page is PageObjectResponse => 'properties' in page)
+      .map(getPostMetadata);
+
+    return posts;
+  },
+  ['til-posts'],
+  {
+    revalidate: 3600,
+    tags: ['til-posts', 'posts'],
+  }
+);

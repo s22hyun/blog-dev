@@ -7,6 +7,7 @@ import TagSectionClient from '@/app/_components/TagSection.client';
 import PostListSkeleton from '@/components/features/blog/PostListSkeleton';
 import TagSectionSkeleton from '@/app/_components/TagSectionSkeleton';
 import { Metadata } from 'next';
+import { TilSection } from '@/components/features/blog/TilSection';
 
 interface HomeProps {
     searchParams: Promise<{ tag?: string; sort?: string }>;
@@ -39,6 +40,10 @@ export default async function Home({ searchParams }: HomeProps) {
                 <div className="order-3 space-y-8 md:order-none">
                     {/* 섹션 제목 */}
                     <HeaderSection selectedTag={selectedTag} />
+                    {/* TIL 섹션 */}
+                    <Suspense fallback={null}>
+                        <TilSection />
+                    </Suspense>
                     {/* 블로그 카드 그리드 */}
                     <Suspense fallback={<PostListSkeleton />}>
                         <PostListSuspense postsPromise={postsPromise} />
